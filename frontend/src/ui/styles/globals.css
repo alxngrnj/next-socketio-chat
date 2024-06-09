@@ -1,0 +1,87 @@
+:root {
+  --grayscale-1-light: white;
+  --grayscale-2-light: rgb(235, 235, 235);
+  --grayscale-3-light: lightgray;
+  --grayscale-4-light: gray;
+  --grayscale-5-light: #121212;
+
+  --grayscale-1-dark: #1e1e1e;
+  --grayscale-2-dark: rgba(235, 235, 235, 0.2);
+  --grayscale-3-dark: lightgray;
+  --grayscale-4-dark: gray;
+  --grayscale-5-dark: white;
+
+  --font-dark: #1e1e1e;
+  --font-adaptive: ;
+  --black: #1e1e1e;
+
+  --slider-light: white;
+  --slider-dark: var(--grayscale-4-dark);
+
+  --scrollbar-light: var(--blue-background);
+  --scrollbar-dark: gray;
+
+  --shadow-dark: 0 0 2rem rgba(128, 128, 128, 0.4);
+  --shadow-light: 0 0 2rem var(--grayscale-4-light);
+
+  --blue-primary: #0787C5;
+  --blue-background: #CFE5EF;
+
+  --status-green: rgb(31, 177, 72);
+  --status-red: rgb(255, 68, 68);
+
+  --bubble-radius: 50%;
+  --fade: 0.15s ease;
+  --outer-border: solid 2px var(--grayscale-3);
+  --input-border: solid 1px var(--blue-primary);
+}
+
+:root[data-theme="light"] {
+  --grayscale-1: var(--grayscale-1-light);
+  --grayscale-2: var(--grayscale-2-light);
+  --grayscale-3: var(--grayscale-3-light);
+  --grayscale-4: var(--grayscale-4-light);
+  --grayscale-5: var(--grayscale-5-light);
+
+  --slider: var(--slider-light);
+  --scrollbar: var(--scrollbar-light) transparent;
+  --shadow: var(--shadow-light);
+  --outer-border: solid 2px var(--grayscale-3);
+  --font-adaptive: var(--font-dark);
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --grayscale-1: var(--grayscale-1-dark);
+  --grayscale-2: var(--grayscale-2-dark);
+  --grayscale-3: var(--grayscale-3-dark);
+  --grayscale-4: var(--grayscale-4-dark);
+  --grayscale-5: var(--grayscale-5-dark);
+
+  --slider: var(--slider-dark);
+  --scrollbar: var(--scrollbar-dark) transparent;
+  --shadow: var(--shadow-dark);
+  --outer-border: solid 2px rgb(48, 48, 48);
+  --font-adaptive: lightgray;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  transition: var(--fade)
+}
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100vw;
+  max-height: 100vh;
+}
