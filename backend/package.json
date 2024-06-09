@@ -1,0 +1,49 @@
+{
+  "name": "socket.io-experiment",
+  "version": "1.0.0",
+  "description": "Socket.io Backend Typescript Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run build && SET NODE_ENV=development&& node build/server.js",
+    "prod": "NODE_ENV=production npm run build && node build/server.js",
+    "test": "jest --coverage",
+    "build": "npm run clean && npm run build-ts",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "watch-node": "nodemon -r dotenv/config build/server.js",
+    "clean": "rimraf ./build",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "eslint": "eslint . --ext .js,.ts"
+  },
+  "dependencies": {
+    "@types/socket.io": "^3.0.2",
+    "@types/socket.io-client": "^3.0.0",
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@types/request": "^2.48.12",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "babel-jest": "^29.7.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
