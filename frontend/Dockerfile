@@ -1,4 +1,4 @@
-FROM node:16 AS builder
+FROM node:latest AS builder
 
 WORKDIR /app
 
@@ -11,11 +11,11 @@ COPY . .
 
 RUN npm run build
 
-FROM node:16
+FROM node:latest
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/.next ./.next
 
-EXPOSE 3001
-CMD [ "npm", "run", "prod" ]
+EXPOSE 3000
+CMD [ "npm", "run", "start" ]
