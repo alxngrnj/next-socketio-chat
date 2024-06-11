@@ -1,16 +1,20 @@
 {
   "name": "socket.io-experiment",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "Socket.io Backend Typescript Project",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build && SET NODE_ENV=development&& node build/server.js",
-    "prod": "NODE_ENV=production npm run build && node build/server.js",
+    "dev": "npm run build && SET NODE_ENV=development && node dist/src/server.js",
+    "prod": "NODE_ENV=production && node dist/src/server.js",
+    "docker:prod": "npm run ",
     "test": "jest --coverage",
     "build": "npm run clean && npm run build-ts",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
-    "watch-node": "nodemon -r dotenv/config build/server.js",
-    "clean": "rimraf ./build",
+    "watch-node": "nodemon -r dotenv/config dist/src/server.js",
+    "clean": "rimraf ./dist",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
     "eslint": "eslint . --ext .js,.ts"

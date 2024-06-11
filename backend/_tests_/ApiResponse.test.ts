@@ -2,7 +2,7 @@ import { Response } from 'express';
 import {
   InternalErrorResponse,
   NotFoundErrorResponse,
-} from '../../../next-socket2/backend/src/core/ApiResponse';
+} from '../src/core/ApiResponse';
 
 const mockResponse: Partial<Response> = {
   status: jest.fn().mockReturnThis(),

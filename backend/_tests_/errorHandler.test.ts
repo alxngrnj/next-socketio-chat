@@ -1,8 +1,12 @@
 import request from 'supertest';
 import express from 'express';
-import { NotFoundError, InternalError, GenericError } from '../../../next-socket2/backend/src/core/ApiError';
-import { errorHandler } from '../../../next-socket2/backend/src/middlewares/errorHandler.middleware';
-import Logger from '../../../next-socket2/backend/src/core/Logger';
+import {
+  NotFoundError,
+  InternalError,
+  GenericError,
+} from '../src/core/ApiError';
+import { errorHandler } from '../src/middlewares/errorHandler.middleware';
+import Logger from '../src/core/Logger';
 
 describe('Error Handler Middleware', () => {
   const originalEnv: string | undefined = process.env.NODE_ENV;

@@ -1,8 +1,12 @@
 import { Server as HttpServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import Client from 'socket.io-client';
-import { server as httpServer, io as ioServer, onlineUsers } from '../../../next-socket2/backend/src/server'; // Adjust the path to your server
-import Logger from '../../../next-socket2/backend/src/core/Logger';
+import {
+  server as httpServer,
+  io as ioServer,
+  onlineUsers,
+} from '../src/server';
+import Logger from '../src/core/Logger';
 
 describe('The Express server', () => {
   let serverSpy: jest.SpyInstance;

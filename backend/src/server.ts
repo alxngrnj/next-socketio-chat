@@ -9,12 +9,12 @@ export const io = new Server<ClientToServerEvents, ServerToClientEvents>(
   server,
   {
     cors: {
-      origin: process.env.CORS_URL,
+      origin: process.env.CORS_URL || '*',
     },
   },
 );
 
-const onlineUsers = new Map<string, string>();
+export const onlineUsers = new Map<string, string>();
 let isEmitting = false;
 let sendOnlineUsers: NodeJS.Timeout;
 

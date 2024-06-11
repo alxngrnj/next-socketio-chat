@@ -1,0 +1,10 @@
+.git
+npm-debug.log
+.coverage
+.coverage.*
+.env
+.aws
+logs
+node_modules
+dist
+build
