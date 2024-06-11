@@ -126,7 +126,7 @@ export default function Home() {
     e.preventDefault();
 
     if (!socket?.connected) return toast.error("Please reconnect server first");
-    if (!nameInputRef.current?.value) return toast.error("Insira um novo nome");
+    if (!nameInputRef.current?.value) return toast.error("Insert a new name");
 
     const newUserData: SocketOnlineUser = {
       socketId: socket?.id || "",

@@ -1,6 +1,7 @@
 .avatar-bubble {
   display: flex;
-  place-content: center;
+  justify-content: center;
+  align-items: center;
 
   position: relative;
   height: 2.5rem;
