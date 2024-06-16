@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  socket.io-backend:
+    container_name: socket.io-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3000
+    env_file: "./backend/.env"
+
+  socket.io-frontend:
+    container_name: socket.io-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000

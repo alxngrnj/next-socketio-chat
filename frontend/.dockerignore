@@ -3,6 +3,7 @@ npm-debug.log
 .coverage
 .coverage.*
 .env
+.env.*
 .aws
 logs
 node_modules
