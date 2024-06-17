@@ -2,6 +2,9 @@ FROM node:latest AS builder
 
 WORKDIR /app
 
+ARG SOCKET_URL
+ENV NEXT_PUBLIC_SOCKET_URL=${SOCKET_URL}
+
 COPY package.json ./
 COPY package-lock.json ./
 

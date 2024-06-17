@@ -34,13 +34,18 @@ const useStore = create<Store>()(
       },
       connect: () => {
         const { socket } = get();
-
+        if (process.env.NEXT_PUBLIC_SOCKET_URL === undefined) {
+          return toast.error("Socket URL is undefined");
+        }
         if (socket) {
           console.log("Socket already connected", socket);
           toast.error("Socket already connected");
         } else {
-          console.log("Connecting to socket on localhost:3001");
-          const socket = io("http://localhost:3001");
+          console.log(
+            "Connecting to socket",
+            process.env.NEXT_PUBLIC_SOCKET_URL
+          );
+          const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);
           socket
             .on("connect", () => {
               console.log("SOCKET CONNECTED!", socket.id);
