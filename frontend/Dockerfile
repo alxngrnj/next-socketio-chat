@@ -2,6 +2,9 @@ FROM node:latest AS builder
 
 WORKDIR /app
 
+ARG SOCKET_URL
+ENV NEXT_PUBLIC_SOCKET_URL=${SOCKET_URL}
+
 COPY package.json ./
 COPY package-lock.json ./
 
@@ -15,7 +18,7 @@ FROM node:latest
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/.next ./.next
 
-EXPOSE 3001
-CMD [ "npm", "run", "prod" ]
+EXPOSE 3000
+CMD [ "npm", "run", "start" ]

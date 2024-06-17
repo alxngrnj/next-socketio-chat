@@ -1,9 +1,6 @@
 {
   "name": "socket.io-experiment",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.x"
-  },
   "description": "Socket.io Backend Typescript Project",
   "main": "index.js",
   "scripts": {
