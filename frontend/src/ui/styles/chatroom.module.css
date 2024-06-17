@@ -258,6 +258,14 @@
   margin-right: 0.3rem;
 }
 
+.logo {
+  position: fixed;
+  height: 50vh;
+  width: 50vh;
+  align-self: center;
+  justify-self: center;
+}
+
 @media (max-width: 800px) {
   .main {
     width: 100vw;

@@ -34,6 +34,7 @@ import PrivateMessageIcon from "@/../public/private-message.svg";
 import DisconnectIcon from "@/../public/disconnect.svg";
 import EditIcon from "@/../public/edit.svg";
 import GreenCheckIcon from "@/../public/green-check.svg";
+import SocialSparkleLogo from "@/../public/social-sparkle-logo.svg";
 import CloseIcon from "@/../public/close.svg";
 import styles from "../ui/styles/chatroom.module.css";
 import ChatroomSection from "@/ui/components/ChatroomSection";
@@ -394,6 +395,7 @@ export default function Home() {
             </Fragment>
           );
         })}
+        <Image src={SocialSparkleLogo} alt="App logo" className={styles.logo} />
       </ChatroomSection>
       <ChatroomSection layout={"message-input"}>
         <form className={styles["chat-input"]}>
