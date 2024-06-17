@@ -201,29 +201,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <ChatroomSection layout={"header"}>
-        {activeModal === "name" && (
-          <Modal>
-            <div className={styles["modal-backdrop"]} />
-            <div className={styles["name-modal"]}>
-              <div className={styles["modal-line"]}>
-                <h3>New name</h3>
-                <Button
-                  buttonPic={CloseIcon}
-                  altText="X icon"
-                  action={closeModal}
-                />
-              </div>
-              <form onSubmit={updateName}>
-                <div className={styles["modal-line"]}>
-                  <label htmlFor="name-input">Your new name</label>
-                </div>
-                <input ref={nameInputRef} id="name-input"></input>
-                <button type="submit">Submit</button>
-              </form>
-              <p className={styles["name-info"]}>Your current name is {name}</p>
-            </div>
-          </Modal>
-        )}
         <div className={styles["header-div"]}>
           <Avatar statusBubble={true} user={socket?.id ? name : undefined} />
           <Button
@@ -434,6 +411,29 @@ export default function Home() {
           />
         </form>
       </ChatroomSection>
+      {activeModal === "name" && (
+        <Modal>
+          <div className={styles["modal-backdrop"]} />
+          <div className={styles["name-modal"]}>
+            <div className={styles["modal-line"]}>
+              <h3>New name</h3>
+              <Button
+                buttonPic={CloseIcon}
+                altText="X icon"
+                action={closeModal}
+              />
+            </div>
+            <form onSubmit={updateName}>
+              <div className={styles["modal-line"]}>
+                <label htmlFor="name-input">Your new name</label>
+              </div>
+              <input ref={nameInputRef} id="name-input"></input>
+              <button type="submit">Submit</button>
+            </form>
+            <p className={styles["name-info"]}>Your current name is {name}</p>
+          </div>
+        </Modal>
+      )}
     </main>
   );
 }
