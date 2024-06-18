@@ -197,6 +197,7 @@ export default function Home() {
     document.documentElement.setAttribute("data-theme", systemTheme);
 
     return () => useStore.persist.clearStorage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

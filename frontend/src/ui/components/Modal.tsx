@@ -23,6 +23,7 @@ const Modal: FC<ModalProps> = ({ children }) => {
       setIsMounted(false);
       document.removeEventListener("mousedown", handleClickOutside);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -34,6 +35,7 @@ const Modal: FC<ModalProps> = ({ children }) => {
         (activeModal === "users" || activeModal === "message") &&
         styles["users-list"]
       }`}
+      data-testid="modal-div-wrapper"
     >
       {children}
     </div>
