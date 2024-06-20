@@ -5,6 +5,7 @@ npm-debug.log
 .env
 .env.*
 .aws
+.swc/
 logs
 node_modules
 dist

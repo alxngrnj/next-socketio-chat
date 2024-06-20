@@ -55,8 +55,6 @@ describe('The Socket.IO server', () => {
   let clientSocket: ReturnType<typeof Client>;
   let targetClientSocket: ReturnType<typeof Client>;
 
-  beforeEach(() => {});
-
   beforeAll((done) => {
     spyLog = jest.spyOn(global.console, 'log');
     httpServerInstance = httpServer;
