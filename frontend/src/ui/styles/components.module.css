@@ -275,6 +275,11 @@
     right: 0;
   }
 
+  .header {
+    height: 12%;
+    align-items: end;
+  }
+
   .message-input {
     width: 100vw;
   }
