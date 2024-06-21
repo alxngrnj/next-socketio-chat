@@ -94,6 +94,9 @@
   width: 1.5rem;
   cursor: pointer;
   border-radius: var(--bubble-radius);
+  border: none;
+
+  background: none;
 }
 
 .button img {

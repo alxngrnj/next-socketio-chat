@@ -4,9 +4,9 @@ import styles from "@/ui/styles/components.module.css";
 import { ButtonProps } from "@/lib/types/next";
 
 const Button: React.FC<ButtonProps> = ({ action, buttonPic, altText }) => (
-  <div className={styles.button} onMouseDown={() => action()}>
+  <button className={styles.button} onMouseDown={() => action()}>
     <Image src={buttonPic} alt={altText} />
-  </div>
+  </button>
 );
 
 export default Button;

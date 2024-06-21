@@ -1,16 +1,24 @@
 import "@testing-library/jest-dom";
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Modal from "../src/ui/components/Modal";
-// import useStore from "../src/lib/storage/state";
+import useStore from "../src/lib/storage/state";
+import Home from "@/app/page";
+import { Modals } from "@/lib/types/next";
+
+const initialStoreState = useStore.getState();
 
 describe("<Modal />", () => {
-  it("should render a div wrapper", () => {
+  const { activeModal, setActiveModal, setIsMounted } = useStore();
+
+  it("should render a div wrapper", async () => {
+    setActiveModal("socket");
     render(
       <Modal>
         <p>test</p>
       </Modal>
     );
-    const parentDiv = screen.getByTestId("modal-div-wrapper");
+    expect(activeModal).toBe("users");
+    const parentDiv = () => screen.findByTestId("socket");
 
     expect(parentDiv).toBeInTheDocument();
   });
@@ -36,26 +44,19 @@ describe("<Modal />", () => {
     expect(ul).toContainElement(text);
   });
 
-  // it("should render different modals according to state", () => {
-  //   const { setActiveModal, activeModal } = useStore();
-  //   render(
-  //     <Modal>
-  //       <p>test</p>
-  //     </Modal>
-  //   );
-  //   setActiveModal("users");
+  it("should render different modals according to state", () => {
+    setActiveModal("users");
+    render(
+      <Modal data-testid="modal-wrapper">
+        <p>test string</p>
+      </Modal>
+    );
+    const parentDiv = () => screen.findByTestId("users");
 
-  // const parentDiv = () => screen.findByTestId("modal-div-wrapper");
-  // expect(parentDiv).toHaveClass("users-list");
+    expect(parentDiv).toHaveClass("users-list");
 
-  // // Set another active modal
-  // act(() => setActiveModal("message"));
+    expect(parentDiv).toHaveClass("name-modal-container");
+  });
 
-  // expect(parentDiv).toHaveClass("users-list");
-
-  // // Reset to original active modal
-  // act(() => setActiveModal("name"));
-
-  // expect(parentDiv).toHaveClass("name-modal-container");
-  // });
+  afterEach(() => jest.clearAllMocks());
 });

@@ -35,7 +35,7 @@ const Modal: FC<ModalProps> = ({ children }) => {
         (activeModal === "users" || activeModal === "message") &&
         styles["users-list"]
       }`}
-      data-testid="modal-div-wrapper"
+      data-testid={activeModal}
     >
       {children}
     </div>
