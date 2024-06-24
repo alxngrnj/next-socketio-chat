@@ -197,6 +197,7 @@ export default function Home() {
     document.documentElement.setAttribute("data-theme", systemTheme);
 
     return () => useStore.persist.clearStorage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -430,7 +431,9 @@ export default function Home() {
                 <label htmlFor="name-input">Your new name</label>
               </div>
               <input ref={nameInputRef} id="name-input"></input>
-              <button type="submit">Submit</button>
+              <button type="submit" className={styles["submit-button"]}>
+                Submit
+              </button>
             </form>
             <p className={styles["name-info"]}>Your current name is {name}</p>
           </div>

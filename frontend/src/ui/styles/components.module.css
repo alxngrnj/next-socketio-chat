@@ -94,6 +94,9 @@
   width: 1.5rem;
   cursor: pointer;
   border-radius: var(--bubble-radius);
+  border: none;
+
+  background: none;
 }
 
 .button img {
@@ -270,6 +273,11 @@
 @media (max-width: 800px) {
   .users-list {
     right: 0;
+  }
+
+  .header {
+    height: 12%;
+    align-items: end;
   }
 
   .message-input {
